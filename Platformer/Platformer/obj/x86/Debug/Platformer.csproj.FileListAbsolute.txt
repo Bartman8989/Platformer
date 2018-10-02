@@ -49,3 +49,16 @@ C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\obj\x86\Debug
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\obj\x86\Debug\Platformer.csproj.CoreCompileInputs.cache
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\obj\x86\Debug\Platformer.exe
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\obj\x86\Debug\Platformer.pdb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\CastleTileSet.xnb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\Level1.xnb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\MonoGame.Extended.dll
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\MonoGame.Extended.Graphics.dll
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.dll
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Newtonsoft.Json.dll
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\MonoGame.Extended.pdb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\MonoGame.Extended.xml
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\MonoGame.Extended.Graphics.pdb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\MonoGame.Extended.Graphics.xml
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.pdb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.xml
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Newtonsoft.Json.xml

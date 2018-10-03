@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Platformer
 {
-    class Sprite
+    public class Sprite
     {
         public Vector2 position = Vector2.Zero;
+        public Vector2 velocity = Vector2.Zero;
         public Vector2 offset = Vector2.Zero;
 
         Texture2D texture;

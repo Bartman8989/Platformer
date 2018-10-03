@@ -22,10 +22,15 @@ namespace Platformer
         TiledMap map = null; //Creates an instance of a Tiled map
         TiledMapRenderer mapRenderer = null; //Creates an instance ofwhat makes a Tiled map
 
+        public Rectangle myMap;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            graphics.PreferredBackBufferWidth = 1600;
+            graphics.PreferredBackBufferHeight = 900;
         }
 
         /// <summary>
@@ -37,6 +42,12 @@ namespace Platformer
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            myMap.X = 0;
+            myMap.Y = 0;
+            myMap.Width = 6400;
+            myMap.Height = 6400;
+
+
 
             base.Initialize();
         }
@@ -101,7 +112,7 @@ namespace Platformer
         protected override void Draw(GameTime gameTime)
         {
             // CLear anything previously drawn to the screen
-            GraphicsDevice.Clear(Color.Gray);
+            GraphicsDevice.Clear(Color.DeepSkyBlue);
 
             var viewMatrix = camera.GetViewMatrix();
             var projectionMatrix = Matrix.CreateOrthographicOffCenter(0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, 0, 0.0f, -1.0f);

@@ -27,6 +27,11 @@ namespace Platformer
         public void Load(ContentManager content, Game1 theGame)
         {
             playerSprite.Load(content, "hero", true);
+
+            AnimatedTexture animation = new AnimatedTexture(Vector2.Zero, 0, 1, 1);
+            animation.Load(content, "walk", 12, 20);
+            playerSprite.AddAnimation(animation, 0, -5);
+
             playerSprite.offset = new Vector2(24, 24);
             game = theGame; // We are now able to access the information stored in the 'Game1' class
             playerSprite.velocity = Vector2.Zero;

@@ -66,7 +66,7 @@ namespace Platformer
 
         public void Update(float deltaTime)
         {
-
+            animations[currentAnimation].UpdateFrame(deltaTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)

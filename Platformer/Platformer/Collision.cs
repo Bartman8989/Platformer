@@ -66,6 +66,7 @@ namespace Platformer
         Sprite CollideRight(Sprite hero, Vector2 tileIndex, Sprite playerPrediction)
         {
             Sprite tile = game.levelGrid[(int)tileIndex.X, (int)tileIndex.Y];
+
             if (IsColliding(playerPrediction, tile) == true && hero.velocity.X > 0)
             {
                 hero.position.X = tile.leftEdge - hero.width + hero.offset.X;
@@ -75,12 +76,12 @@ namespace Platformer
             return hero;
         }
 
-        Sprite CollideBelow(Sprite hero, Vector2 tileIndex, Sprite playerPrediction)
+            Sprite CollideBelow(Sprite hero, Vector2 tileIndex, Sprite playerPrediction)
         {
             Sprite tile = game.levelGrid[(int)tileIndex.X, (int)tileIndex.Y];
             if (IsColliding(playerPrediction, tile) == true && hero.velocity.Y > 0)
             {
-                hero.position.Y = tile.bottomEdge + hero.offset.X;
+                hero.position.Y = tile.topEdge - hero.height + hero.offset.Y;
                 hero.velocity.X = 0;
             }
             return hero;
@@ -90,7 +91,7 @@ namespace Platformer
             Sprite tile = game.levelGrid[(int)tileIndex.X, (int)tileIndex.Y];
             if (IsColliding(playerPrediction, tile) == true && hero.velocity.Y < 0)
             {
-                hero.position.Y = tile.topEdge - hero.offset.X;
+                hero.position.Y = tile.bottomEdge + hero.offset.Y;
                 hero.velocity.X = 0;
             }
             return hero;
@@ -179,9 +180,9 @@ namespace Platformer
             Vector2 bottomTile = new Vector2(playerTile.X, playerTile.Y + 1);
 
             Vector2 bottomLeftTile = new Vector2(playerTile.X - 1, playerTile.Y + 1);
-            Vector2 bottomRightTile = new Vector2(playerTile.X + 1, playerTile.Y - 1);
+            Vector2 bottomRightTile = new Vector2(playerTile.X + 1, playerTile.Y + 1);
             Vector2 topLeftTile = new Vector2(playerTile.X - 1, playerTile.Y - 1);
-            Vector2 topRightTile = new Vector2(playerTile.X + 1, playerTile.Y + 1);
+            Vector2 topRightTile = new Vector2(playerTile.X + 1, playerTile.Y - 1);
             // ...This allows us to predict if the hero will be overlapping an obstacle in the next frame
 
             bool leftCheck = CheckForTile(leftTile);
@@ -209,6 +210,34 @@ namespace Platformer
             if (topCheck == true) // Check for collisions with the tiles above the player
             {
                 hero = CollideAbove(hero, topTile, playerPrediction);
+            }
+
+            // Check for collisions with the tiles below and to the left of the player...
+            if (leftCheck == false && bottomCheck == false && bottomLeftCheck == true)
+            {
+                // ... then properly check for the diagonals.
+                hero = CollideBottomDiagonals(hero, bottomLeftTile, playerPrediction);
+            }
+
+            // check for collisions with the tiles below and to the right of the player...
+            if (rightCheck == false && bottomCheck == false && bottomRightCheck == true)
+            {
+                // ... then properly check for the diagonals
+                hero = CollideBottomDiagonals(hero, bottomRightTile, playerPrediction);
+            }
+
+            // check for collisions with the tiles above and to the left of the player...
+            if (leftCheck == false && topCheck == false && topLeftCheck == true)
+            {
+                // ... then properly check for the diagonals
+                hero = CollideAboveDiagonals(hero, topLeftTile, playerPrediction);
+            }
+
+            // check for the collisions with the tiles above and to the right of the player...
+            if (rightCheck == false && topCheck == false && topRightCheck == true)
+            {
+                // ... then properly check for the diagonals
+                hero = CollideAboveDiagonals(hero, topRightTile, playerPrediction);
             }
 
             return hero;

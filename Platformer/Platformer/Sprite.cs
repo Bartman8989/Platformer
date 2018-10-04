@@ -49,7 +49,7 @@ namespace Platformer
         public void UpdateHitBox()
         {
             leftEdge = (int)position.X - (int)offset.X;
-            rightEdge = (int)position.X + width;
+            rightEdge = leftEdge + width;
             topEdge = (int)position.Y - (int)offset.Y;
             bottomEdge = topEdge + height;
         }

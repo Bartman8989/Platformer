@@ -63,3 +63,15 @@ C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.xml
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Newtonsoft.Json.xml
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\walk.xnb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\heart.xnb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\hero2.xnb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\song.wma
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\song.xnb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\attack.xnb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\collectable.wma
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\collectable.xnb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\damage.xnb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\death.xnb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\jump.xnb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\chest.xnb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\zombie.xnb

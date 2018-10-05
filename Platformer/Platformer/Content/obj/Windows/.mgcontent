@@ -9,5 +9,15 @@
     <File>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/CastleTileSet.png</File>
     <File>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/Level1.tmx</File>
     <File>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/walk.png</File>
+    <File>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/heart.png</File>
+    <File>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/hero2.png</File>
+    <File>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/song.ogg</File>
+    <File>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/collectable.ogg</File>
+    <File>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/attack.wav</File>
+    <File>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/damage.wav</File>
+    <File>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/death.wav</File>
+    <File>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/jump.wav</File>
+    <File>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/chest.png</File>
+    <File>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/zombie.png</File>
   </SourceFiles>
 </SourceFileCollection>

@@ -1,11 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
 using MonoGame.Extended;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Graphics;
 using MonoGame.Extended.ViewportAdapters;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Platformer
 {
@@ -19,6 +22,9 @@ namespace Platformer
 
         Player player = new Player(); //Create an instance of our player class
 
+        public List<Enemy> enemies = new List<Enemy>();
+        public Chest goal = null;
+
         Camera2D camera = null; //Create an instance of a 2D Camera
         TiledMap map = null; //Creates an instance of a Tiled map
         TiledMapRenderer mapRenderer = null; //Creates an instance ofwhat makes a Tiled map
@@ -30,6 +36,15 @@ namespace Platformer
         public int tileHeight = 0;
         public int levelTileWidth = 0;
         public int levelTileHeight = 0;
+
+        public Vector2 gravity = new Vector2(0, 1500);
+
+        Song gameMusic;
+
+        SpriteFont arialFont;
+        int score = 0;
+        int lives = 3;
+        Texture2D heart = null;
 
         public Rectangle myMap;
 
@@ -73,6 +88,10 @@ namespace Platformer
             player.Load(Content, this); // Call the 'Load' function in the Player class
             //'this' basically means "pass all information in our class through as a variable"
 
+            arialFont = Content.Load<SpriteFont>("Arial");
+            heart = Content.Load<Texture2D>("heart");
+
+
             BoxingViewportAdapter viewportAdapter = new BoxingViewportAdapter(Window,GraphicsDevice, graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height);
             camera = new Camera2D(viewportAdapter);
             camera.Position = new Vector2(0, graphics.GraphicsDevice.Viewport.Height);
@@ -83,7 +102,11 @@ namespace Platformer
             map = Content.Load<TiledMap>("Level1");
             mapRenderer = new TiledMapRenderer(GraphicsDevice);
 
+            gameMusic = Content.Load<Song>("song");
+            MediaPlayer.Play(gameMusic);
+
             SetUpTiles();
+            LoadObjects();
         }
 
         /// <summary>
@@ -150,6 +173,11 @@ namespace Platformer
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             player.Update(deltaTime); // Call the 'Update' from our Player class
 
+            foreach (Enemy enemy in enemies)
+            {
+                enemy.Update(deltaTime);
+            }
+
             camera.Position = player.playerSprite.position - new Vector2(graphics.GraphicsDevice.Viewport.Width / 2, graphics.GraphicsDevice.Viewport.Height / 2);
 
             base.Update(gameTime);
@@ -180,11 +208,59 @@ namespace Platformer
             mapRenderer.Draw(map, ref viewMatrix, ref projectionMatrix);
             // Call the 'Draw' function from Player class
             player.Draw(spriteBatch);
+            goal.Draw(spriteBatch);
+            foreach (Enemy enemy in enemies)
+            {
+                enemy.Draw(spriteBatch);
+            }
+            
+
             //Finish drawing
             spriteBatch.End();
 
+            spriteBatch.Begin();
+
+            spriteBatch.DrawString(arialFont, "Score : " + score.ToString(), new Vector2(20, 20), Color.Orange);
+
+            int loopCount = 0;
+            while(loopCount < lives)
+            {
+                spriteBatch.Draw(heart, new Vector2(GraphicsDevice.Viewport.Width - 80 - loopCount * 20, 20), Color.White);
+                loopCount++;
+            }
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        void LoadObjects()
+        {
+            foreach (TiledMapObjectLayer layer in map.ObjectLayers)
+            {
+                if (layer.Name == "Enemies")
+                {
+                    foreach (TiledMapObject thing in layer.Objects)
+                    {
+                        Enemy enemy = new Enemy();
+                        Vector2 tiles = new Vector2((int)(thing.Position.X / tileHeight), (int)(thing.Position.Y / tileHeight));
+                        enemy.enemySprite.position = tiles * tileHeight;
+                        enemy.Load(Content, this);
+                        enemies.Add(enemy);
+                    }
+                }
+                if (layer.Name == "Goal")
+                {
+                    TiledMapObject thing = layer.Objects[0];
+                    if (thing != null)
+                    {
+                        Chest chest = new Chest();
+                        chest.chestSprite.position = new Vector2(thing.Position.X, thing.Position.Y);
+                        chest.Load(Content, this);
+                        goal = chest;
+                    }
+                }
+            }
         }
     }
 }

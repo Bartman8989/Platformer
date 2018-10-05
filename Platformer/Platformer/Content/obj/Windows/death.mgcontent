@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/death.wav</SourceFile>
+  <SourceTime>2018-10-05T11:10:15.4165333+10:00</SourceTime>
+  <DestFile>C:/Users/s182220/Documents/GitHub/Platformer/Platformer/Platformer/Content/bin/Windows/death.xnb</DestFile>
+  <DestTime>2018-10-05T11:11:32.3635333+10:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2017-03-02T02:05:36+11:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2017-03-02T02:05:36+11:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

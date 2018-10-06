@@ -20,7 +20,7 @@ namespace Platformer
         float maxRunSpeed = 500;
         float friction = 500;
         float terminalVelocity = 500;
-        public float jumpStrength = 5000;
+        public float jumpStrength = 50000;
 
         Collision collision = new Collision();
 
@@ -45,7 +45,7 @@ namespace Platformer
             jumpSound = content.Load<SoundEffect>("jump");
             jumpSoundInstance = jumpSound.CreateInstance();
 
-            playerSprite.offset = new Vector2(24, 24);
+            playerSprite.offset = new Vector2(1, 13);
             game = theGame; // We are now able to access the information stored in the 'Game1' class
             playerSprite.velocity = Vector2.Zero;
             playerSprite.position = new Vector2(1152, 5632);
@@ -57,6 +57,7 @@ namespace Platformer
             bool wasMovingRight = playerSprite.velocity.X > 0;
 
             Vector2 localAcceleration = game.gravity;
+
             if (Keyboard.GetState().IsKeyDown(Keys.Left) == true || Keyboard.GetState().IsKeyDown(Keys.A) == true)
             {
                 localAcceleration.X += -runSpeed;
@@ -93,7 +94,7 @@ namespace Platformer
                 playerSprite.Pause();
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Space) == true)
+            if (Keyboard.GetState().IsKeyDown(Keys.Space) == true && playerSprite.canJump == true)
             {
                 playerSprite.canJump = false;
                 localAcceleration.Y -= jumpStrength;

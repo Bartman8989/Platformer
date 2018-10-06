@@ -45,7 +45,6 @@ C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\SharpDX.XInput.xml
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
-C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\obj\x86\Debug\Platformer.csprojResolveAssemblyReference.cache
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\obj\x86\Debug\Platformer.csproj.CoreCompileInputs.cache
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\obj\x86\Debug\Platformer.exe
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\obj\x86\Debug\Platformer.pdb
@@ -75,3 +74,4 @@ C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\jump.xnb
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\chest.xnb
 C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\zombie.xnb
+C:\Users\s182220\Documents\GitHub\Platformer\Platformer\Platformer\obj\x86\Debug\Platformer.csprojResolveAssemblyReference.cache

@@ -82,7 +82,8 @@ namespace Platformer
             if (IsColliding(playerPrediction, tile) == true && hero.velocity.Y > 0)
             {
                 hero.position.Y = tile.topEdge - hero.height + hero.offset.Y;
-                hero.velocity.X = 0;
+                hero.canJump = true;
+                hero.velocity.Y = 0;
             }
             return hero;
         }
@@ -92,7 +93,7 @@ namespace Platformer
             if (IsColliding(playerPrediction, tile) == true && hero.velocity.Y < 0)
             {
                 hero.position.Y = tile.bottomEdge + hero.offset.Y;
-                hero.velocity.X = 0;
+                hero.velocity.Y = 0;
                 hero.canJump = true;
             }
             return hero;

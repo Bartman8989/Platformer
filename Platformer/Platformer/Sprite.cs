@@ -74,6 +74,9 @@ namespace Platformer
 
         public void Draw(SpriteBatch spriteBatch)
         {
+#if (DEBUG)
+            spriteBatch.Draw(Game1.whiteRectangle, new Rectangle(leftEdge, topEdge, width, height), Color.Red);
+#endif
             //spriteBatch.Draw(texture, position - offset, Color.White);
 
             animations[currentAnimation].DrawFrame(spriteBatch, position + animationOffsets[currentAnimation], effects);

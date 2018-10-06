@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿#define DEBUG
+
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
@@ -47,6 +49,10 @@ namespace Platformer
         Texture2D heart = null;
 
         public Rectangle myMap;
+
+#if (DEBUG)
+        static public Texture2D whiteRectangle;
+#endif
 
         public Game1()
         {
@@ -99,11 +105,13 @@ namespace Platformer
             map = Content.Load<TiledMap>("Level1");
             mapRenderer = new TiledMapRenderer(GraphicsDevice);
 
-            map = Content.Load<TiledMap>("Level1");
-            mapRenderer = new TiledMapRenderer(GraphicsDevice);
-
             gameMusic = Content.Load<Song>("song");
             MediaPlayer.Play(gameMusic);
+
+#if (DEBUG)
+            whiteRectangle = new Texture2D(GraphicsDevice, 1, 1);
+            whiteRectangle.SetData(new[] { Color.White });
+#endif
 
             SetUpTiles();
             LoadObjects();
@@ -115,6 +123,9 @@ namespace Platformer
         /// </summary>
         protected override void UnloadContent()
         {
+#if (DEBUG)
+            whiteRectangle.Dispose();
+#endif
             // TODO: Unload any non ContentManager content here
         }
 
